@@ -745,7 +745,48 @@ body.dark-mode {
   --text-muted: #d8dee9; /* Lighter grey for descriptions */
 }
 
-/* If you want descriptions to be slightly softer */
-.text-secondary {
-  color: var(--text-muted);
+@media (max-width:768px){
+
+  html,body{
+    overflow-x:hidden;
+  }
+
+  .navbar{
+    flex-direction:column;
+    padding:15px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .about-container, .contact-container{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .skills-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .project-card, .cert-card{
+    width:100%;
+    max-width:350px;
+    margin:auto;
+  }
+
+  .profile-circle{
+    width:180px;
+    height:180px;
+  }
+
+  section{
+    padding:70px 15px;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
 }
