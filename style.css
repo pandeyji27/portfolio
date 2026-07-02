@@ -13,7 +13,7 @@ html {
 .main-header {
   position: sticky; /* Keeps it at the top */
   top: 0;
-  z-index: 1000; /* Ensures it stays above other content */
+  z-index: 100%; /* Ensures it stays above other content */
   background-color: var(--nav-bg);
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   padding: 07px 0;
