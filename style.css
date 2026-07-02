@@ -1,0 +1,751 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* This makes the jumping look professional */
+}
+
+/* Header Specific Styling */
+.main-header {
+  position: sticky; /* Keeps it at the top */
+  top: 0;
+  z-index: 1000; /* Ensures it stays above other content */
+  background-color: var(--nav-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 07px 0;
+  border-bottom: 3px solid var(--nord-frost);
+}
+
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center;           /* Centers items vertically */
+  padding: 10px 5%;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+/* Brand Section (Circle + Name) */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between circle and text */
+}
+
+/* The "AP" Circle */
+.circle {
+  width: 45px;
+  height: 45px;
+  background-color: var(--nord-frost);
+  color: var(--nord-dark);
+  border-radius: 50%;        /* Makes it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid var(--nord-dark);
+  box-shadow: 4px 4px 0px var(--nord-blue);
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Space between links */
+}
+
+.nav-links a {
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--nord-frost);
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px; /* Padding for the sticky nav */
+    min-height: 100vh;
+    border-bottom: 1px solid #eee;
+}
+
+.hero {
+  background: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* APPLYING VARIABLES */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* About Styling */ 
+.about-section {
+  padding: 60px 10%;
+  background-color: var(--bg-card); /* Secondary background for contrast */
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+.about-container {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  gap: 50px;
+}
+
+/* Left: Circle Photo */
+.about-left {
+  flex: 1; /* Takes up 1 part of the flex container */
+  display: flex;
+  justify-content: center;
+}
+
+.profile-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--nord-frost); /* Matches your accent color */
+  box-shadow: 10px 10px 0px var(--nord-dark); /* Hard shadow matching cards */
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image isn't stretched */
+}
+
+/* Right: Text and Typing Effect */
+.about-right {
+  flex: 2; /* Takes up more space than the photo */
+}
+
+.about-right h3 {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.typing-text {
+  color: var(--nord-frost); /* Blue color for job roles */
+  font-weight: 800;
+}
+
+/* Cursor Animation */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--nord-frost);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.about-desc {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.nss-note {
+  font-style: italic;
+  font-weight: 500;
+  border-left: 3px solid var(--nord-blue);
+  padding-left: 15px;
+  color: var(--text-main);
+}
+
+/* Responsive: Stack columns on smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nss-note {
+    border-left: none;
+    border-top: 3px solid var(--nord-blue);
+    padding: 10px 0;
+  }
+}
+
+
+/* Education */
+.education-section {
+  padding: 60px 10%;
+  background-color: var(--bg-body);
+}
+
+.edu-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+.edu-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  border-left: 3px solid var(--accent); /* The timeline line */
+  padding-left: 30px;
+}
+
+.edu-card {
+  background: var(--bg-card);
+  padding: 25px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 6px 6px 0px var(--accent); /* Matching your Nord theme */
+  transition: 0.3s;
+  border: 1px solid var(--accent);
+  color: var(--text-main);
+}
+
+/* The dot on the timeline */
+.edu-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--nord-frost);
+  border: 3px solid var(--nord-dark);
+  border-radius: 50%;
+  position: absolute;
+  left: -41px; /* Positions it exactly on the line */
+  top: 30px;
+}
+
+.edu-card:hover {
+  transform: translateX(10px);
+  box-shadow: 10px 10px 0px var(--nord-blue);
+}
+
+.edu-year {
+  font-weight: bold;
+  color: var(--nord-blue);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.edu-content h3 {
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+.university {
+  font-weight: 600;
+  color: var(--nord-blue);
+  margin: 5px 0;
+}
+
+.edu-details {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Adjust text on mobile so it doesn't get cramped */
+@media (max-width: 480px) {
+}
+
+
+/* SKills */
+.skills-section {
+  padding: 60px 10%;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px;
+}
+
+.skill-category {
+  background: var(--bg-card);
+  padding: 30px;
+  border: 1px solid #d8dee9;
+  box-shadow: 8px 8px 0px var(--accent); /* Matching your theme */
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: var(--nord-blue);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Technical Tags Style */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 8px 16px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  transition: 0.3s;
+}
+
+.tag:hover {
+  background-color: var(--accent);
+  color: var(--bg-card);
+  transform: translateY(-3px);
+}
+
+/* Soft Skills List Style */
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.soft-skills-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.soft-skills-list i {
+  color: var(--accent);/* A nice work for checkmarks */
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Certificates */
+.cert-section {
+  padding: 60px 0;
+  overflow: hidden; /* Prevents horizontal scrollbar */
+}
+
+.cert-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+/* The viewport for the certificates */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-body);
+  padding: 20px 0;
+}
+
+/* The moving track */
+.marquee-content {
+  display: flex;
+  width: max-content; /* Important: allows the div to be as wide as the content */
+  gap: 40px;
+  animation: scroll 25s linear infinite;
+}
+
+/* PAUSE ON HOVER */
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+/* The Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves halfway through the duplicated list */
+  }
+}
+
+/* Individual Certificate Card */
+.cert-card {
+  width: 300px;
+  text-align: center;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Keeps certificate proportions */
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: var(--bg-card);
+}
+
+.cert-card p {
+  font-weight: 600;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+.cert-card:hover{
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--nord-frost);
+}
+
+.project-card, .cert-card {
+  background: var(--bg-card);
+  border: 1px solid #d8dee9;
+  border-radius: 8px; /* Slightly rounded for a modern balance */
+  box-shadow: 8px 8px 0px var(--accent); /* Unique hard offset shadow */
+  transition: all 0.3s ease;
+  color: var(--text-main); /* Ensures text inside cards is crisp */
+  text-align: center;
+}
+
+
+/* Projects */
+.projects-section {
+  padding: 60px 10%;
+  background-color: var(--bg-body); /* Light background to contrast with contact section */
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+/* Container for all projects */
+.projects-container {
+  display: flex;
+  justify-content: center; /* Centers the card if there's only one */
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--nord-frost);
+}
+
+.project-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.project-tags {
+  margin: 15px 0;
+}
+
+.project-tags span {
+  background: var(--bg-card);
+  color: var(--text-main);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: 1px solid var(--accent);
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-links a:hover {
+  color: var(--nord-frost);
+}
+
+.btn-code { color: var(--text-main); }
+.btn-live { color: var(--accent); }
+
+
+/* Contact Form */
+.contact-section {
+  padding: 50px 10%;
+}
+
+/* Centering the Title */
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--text-main);
+}
+
+/* Main Flex/Grid Container */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left side smaller, Right side larger */
+  gap: 50px;
+  align-items: start;
+}
+
+/* Left Side Styling (Socials) */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+}
+
+.social-item i {
+  font-size: 1.5rem;
+  color: var(--nord-blue); /* Matches your brand color */
+  width: 30px;
+  text-align: center;
+}
+
+.social-item a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.3s;
+}
+
+.social-item a:hover {
+ color: var(--nord-frost);
+}
+
+.contact-left .social-item i {
+  color: var(--nord-blue); /* This blue works on both light and dark */
+  transition: color 0.3s ease;
+}
+
+.contact-left .social-item a {
+  color: var(--text-main); /* Flips from dark to light */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Right Side Styling (Form) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid var(--accent);
+  background-color: var(--bg-card);
+  color: var(--text-main); 
+  border-radius: 5px;
+  width: 100%;
+  display: block;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: var(--nord-dark);
+  color: var(--nav-text);
+  border: 2px solid var(--nord-dark);
+  border-radius: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  box-shadow: 5px 5px 0px var(--nord-frost);
+}
+
+.contact-form button:hover {
+  background-color: var(--nord-frost);
+  color: var(--nord-dark);
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--nord-dark);
+} 
+
+.contact-left .social-item a:hover {
+  color: var(--nord-frost);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Toggle Button Styling */
+.theme-btn {
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+  color: var(--accent);
+}
+
+
+/* For Footer */
+.main-footer {
+  /* Use variables so it flips automatically */
+  background-color: var(--nav-bg); 
+  color: var(--nav-text);
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 2px solid var(--nord-frost); /* Keeps a nice clean border */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-footer p {
+  /* This ensures the copyright and design text follows the theme */
+  color: var(--nav-text); 
+  margin: 10px 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* For Scrolbar Auto Matching*/ 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+
+/* For characters visible */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  max-width: 70ch; /* Keeps lines of text from getting too long to read */
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+a {
+  text-underline-offset: 4px; /* Makes links easier to see */
+}
+
+
+/* For Theme */
+:root {
+  --nord-dark: #2e3440;
+  --nord-light: #eceff4;
+  --nord-frost: #88c0d0;
+  --nord-blue: #5e81ac;
+/* LIGHT MODE (Default) */
+  --bg-body: #eceff4;
+  --bg-card: #ffffff;
+  --nav-bg: #2e3440;
+  --nav-text: #eceff4;
+  --accent: #88c0d0;
+  --text-main: #2e3440; /* Near-black for light mode */
+  --text-muted: #4c566a; /* Grey for descriptions */
+}
+
+/* DARK MODE (Active when .dark-mode class is on body) */
+body.dark-mode {
+  --bg-body: #1a1e23;
+  --bg-card: #2e3440;
+  --nav-bg: #000000;
+  --nav-text: #eceff4;
+  --accent: #81a1c1;
+  --text-main: #eceff4; /* Off-white for dark mode */
+  --text-muted: #d8dee9; /* Lighter grey for descriptions */
+}
+
+/* If you want descriptions to be slightly softer */
+.text-secondary {
+  color: var(--text-muted);
+}
