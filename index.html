@@ -147,68 +147,39 @@
                 </div>
             </div>
         </section>
+        
+        <section id="certificates" class="cert-section">
+           <h2 class="cert-title">Certificates</h2>
+           <div class="slider-wrapper">
+                <button class="slider-btn prev">&#10094;</button>
+                <div class="certificate-slider">
 
-        <!-- <section id="certificates" class="cert-section">
-            <h2 class="cert-title">Certificates</h2>
-
-            <div class="marquee-container">
-                <div class="marquee-content">
                     <div class="cert-card">
-                    <img src="Assets/abc.png" alt="Web Development Certificate">
-                    <p>Web Development Boot Camp</p>
+                        <img src="Assets/abc.png" alt="Certificate">
+                        <p>Web Development Bootcamp</p>
                     </div>
 
                     <div class="cert-card">
-                    <img src="cert2.jpg" alt="JavaScript Certificate">
-                    <p>Advanced JavaScript</p>
-                    </div>
-
-                    <div class="cert-card">
-                        <img src="cert3.jpg" alt="React Certificate">
-                        <p>React & Redux Masterclass</p>
-                    </div>
-
-                    <div class="cert-card">
-                        <img src="cert1.jpg" alt="Web Development Certificate">
-                        <p>Web Development Boot Camp</p>
-                    </div>
-
-                    <div class="cert-card">
-                        <img src="cert2.jpg" alt="JavaScript Certificate">
+                        <img src="Assets/cert2.jpg" alt="Certificate">
                         <p>Advanced JavaScript</p>
                     </div>
-                </div>
-            </div>
-        </section> -->
 
-        <section id="certificates" class="cert-section">
-            <h2 class="cert-title">Certificates</h2>
-            <div class="certificate-slider">
+                    <div class="cert-card">
+                        <img src="Assets/cert3.jpg" alt="Certificate">
+                        <p>React Masterclass</p>
+                    </div>
 
-                <div class="cert-card">
-                    <img src="Assets/abc.png" alt="Certificate">
-                    <p>Web Development Bootcamp</p>
-                </div>
+                    <div class="cert-card">
+                        <img src="Assets/cert4.jpg" alt="Certificate">
+                        <p>Python Programming</p>
+                    </div>
 
-                <div class="cert-card">
-                 <img src="Assets/cert2.jpg" alt="Certificate">
-                 <p>Advanced JavaScript</p>
+                    <div class="cert-card">
+                        <img src="Assets/cert5.jpg" alt="Certificate">
+                        <p>Machine Learning</p>
+                    </div>
                 </div>
-
-                <div class="cert-card">
-                 <img src="Assets/cert3.jpg" alt="Certificate">
-                 <p>React Masterclass</p>
-                </div>
-
-                <div class="cert-card">
-                 <img src="Assets/cert4.jpg" alt="Certificate">
-                 <p>Python Programming</p>
-                </div>
-
-                <div class="cert-card">
-                 <img src="Assets/cert5.jpg" alt="Certificate">
-                 <p>Machine Learning</p>
-                </div>
+                <button class="slider-btn next">&#10095;</button>
             </div>
         </section>
 
@@ -394,6 +365,46 @@
                     });
                 });
             }
+        </script>
+
+        <script>
+            const slider = document.querySelector(".certificate-slider");
+            document.querySelector(".next").addEventListener("click",()=>{
+                slider.scrollBy({
+                 left:350,
+                 behavior:"smooth"
+                });
+            });
+
+            document.querySelector(".prev").addEventListener("click",()=>{
+                slider.scrollBy({
+                    left:-350,
+                    behavior:"smooth"
+                });
+            });
+
+            // for mouse
+            slider.addEventListener("wheel",(e)=>{
+                e.preventDefault();
+                slider.scrollLeft += e.deltaY;
+            });
+
+            // for keyboard
+            document.addEventListener("keydown",(e)=>{
+                if(e.key==="ArrowRight"){
+                    slider.scrollBy({
+                        left:350,
+                        behavior:"smooth"
+                    });
+                }
+
+                if(e.key==="ArrowLeft"){
+                    slider.scrollBy({
+                        left:-350,
+                        behavior:"smooth"
+                    });
+                }
+            });
         </script>
     </body>
 </html>
