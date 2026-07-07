@@ -453,8 +453,13 @@ body {
   }
 
   .cert-card{
-    min-width:100%;
+    min-width:240px;
   }
+
+  .cert-card img{
+    height:160px;
+  }
+
 }
 
 
