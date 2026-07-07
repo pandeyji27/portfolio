@@ -453,7 +453,7 @@ body {
   }
 
   .cert-card{
-    min-width:260px;
+    min-width:100%;
   }
 }
 
