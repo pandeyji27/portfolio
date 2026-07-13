@@ -453,7 +453,12 @@ body {
   }
 
   .cert-card{
-    min-width:240px;
+    min-width:85%;
+  }
+
+  .certificate-slider{
+    padding:15px;
+    gap:15px;
   }
 
   .cert-card img{
